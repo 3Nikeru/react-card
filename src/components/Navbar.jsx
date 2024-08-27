@@ -10,9 +10,11 @@ const Navbar = () => {
     <nav>
       <div className='nav-center'>
         <h3>Card</h3>
-        <FaOpencart />
-        <div className="amount-container">
-          <p className="total-amount">{amount}</p>
+        <div className='cart'>
+          <FaOpencart />
+          <div className="amount-container">
+            <p className="total-amount">{amount}</p>
+          </div>
         </div>
       </div>
     </nav>

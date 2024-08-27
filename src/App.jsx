@@ -7,8 +7,8 @@ function App() {
 
   return (
     <>
-      <h1>My firs React</h1>
       <Navbar/>
+      <h1>My firs React</h1>
       <CardItem/>
       <Modal/>
     </>

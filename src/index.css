@@ -1,12 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: #3C3D37;
+  background-color: #FFFBE6;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,11 +15,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #FF8343;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #FF8343;
 }
 
 body {
@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  align-items: flex-start;
 }
 
 h1 {
@@ -47,11 +48,41 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #FF8343;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+nav{
+  padding: 10px;
+  background-color: #D5ED9F;
+  border-radius: 20px;
+  color: #FF8343;
+}
+.nav-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.nav-center h3{
+  font-family: "Matemasie", sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+.cart{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart svg{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+.total-amount{
+  font-size: 20px;
+  font-family: "Matemasie", sans-serif;
 }
 
 @media (prefers-color-scheme: light) {
