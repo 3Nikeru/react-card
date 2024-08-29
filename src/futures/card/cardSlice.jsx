@@ -11,7 +11,11 @@ const initialState = {
 const cardSlice = createSlice({
     name: "card",
     initialState,
+    removeItem: (state, action)=>{
+        const itemId = action.payload;
+        state.cardItems = state.cardItems.filter(item => item.id !== itemId);
+    }
 })
 console.log(cardSlice);
-
+export const {removeItem} = cardSlice.actions
 export default cardSlice.reducer
