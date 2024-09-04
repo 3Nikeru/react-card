@@ -15,9 +15,9 @@ const CardItem = ({id, img, title, price, amount}) => {
         <h3 className="item-price">${price}</h3>
         <button 
           className="remove-btn"
-          onClick={() => dispatch(removeItem(id))}
+          onClick={() => dispatch(removeItem(id))} //не до конца понимаю зачем именно вызываем dispatch и только внутри него уже функцию remove
         >Remove</button>
-        <div className="">
+        <div className="amount-folder">
           <button className="amount-btn">
             <IoIosArrowUp />
           </button>
