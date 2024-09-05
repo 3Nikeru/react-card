@@ -5,7 +5,7 @@ import { FaOpencart } from "react-icons/fa";
 
 const Navbar = () => {
   const {amount} = useSelector(state => state.card)
-  console.log(amount)
+
   return (
     <nav>
       <div className='nav-center'>

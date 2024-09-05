@@ -7,13 +7,13 @@ const CardContainer = () => {
     // useSelector(store => console.log(store));
     const {total, amount, cardItems} = useSelector(state => state.card)
 
-    if (amount < 1){
-      return <section className='card'>
-              <header>
-                <h2>Your bag is empty</h2>
-              </header>
-            </section>
-    }
+    // if (amount == 0){
+    //   return <section className='card'>
+    //           <header>
+    //             <h2>Your bag is empty</h2>
+    //           </header>
+    //         </section>
+    // }
   return (
     <section className='card'>
       <header>
