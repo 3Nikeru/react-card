@@ -12,19 +12,16 @@ const cardSlice = createSlice({
     initialState,
     reducers: {
         removeItem: (state, action)=>{
-            // console.log('Current state', JSON.stringify(state, null, 2));
             const itemId = action.payload;
             state.cardItems = state.cardItems.filter(item => item.id !== itemId);
         },
         increase: (state, {payload})=>{
-            console.log('Current state', JSON.stringify(state.cardItems));
-            
-            const cardItem = state.cardItems.find(item => item.id === payload.id);
-            // console.log(cardItem);
-            // cardItem.amount = cardItem.amount + 1;
+            const cardItem = state.cardItems.find(item => item.id == payload);
+            console.log(cardItem);
+            cardItem.amount = cardItem.amount + 1;
         },
         decrease: (state, {payload})=>{
-            const cardItem = state.cardItems.find(item => item.id === payload.id);
+            const cardItem = state.cardItems.find(item => item.id === payload);
             cardItem.amount = cardItem.amount - 1;
         },
         clearCard: state => {
