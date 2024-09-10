@@ -7,7 +7,6 @@ import { removeItem, decrease, increase } from '../futures/card/cardSlice';
 
 const CardItem = ({id, img, title, price, amount}) => {
   const dispatch = useDispatch();
-  // console.log(amount);
   
   return (
     <article className='card-item'>
@@ -24,7 +23,14 @@ const CardItem = ({id, img, title, price, amount}) => {
             <IoIosArrowUp />
           </button>
           <p className="amount">{amount}</p>
-          <button className="amount-btn" onClick={()=> dispatch(decrease(id))}>
+          <button className="amount-btn" onClick={()=>{
+            if(amount === 1){
+              dispatch(removeItem(id));
+              return;
+              }
+              dispatch( decrease(id))
+            }
+            }>
             <IoIosArrowDown />
           </button>
         </div>

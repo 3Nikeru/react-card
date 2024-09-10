@@ -17,7 +17,7 @@ const cardSlice = createSlice({
         },
         increase: (state, {payload})=>{
             const cardItem = state.cardItems.find(item => item.id == payload);
-            console.log(cardItem);
+            console.log(payload);
             cardItem.amount = cardItem.amount + 1;
         },
         decrease: (state, {payload})=>{
