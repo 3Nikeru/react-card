@@ -4,10 +4,11 @@ import CardContainer from './components/CardContainer'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { calculateTotals } from './futures/card/cardSlice'
+import Modal from './components/Modal'
 
 function App() {
     const {cardItems} = useSelector(store => store.card);
-    // console.log(cardItems);
+    const {isOpen} = useSelector(store => store.modal)
     
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -15,6 +16,7 @@ function App() {
     }, [cardItems]);
   return (
     <>
+      {isOpen && < Modal/>}
       <Navbar/>
       <CardContainer/>
     </>

@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CardItem from './CardItem'
 import { clearCard, removeItem } from '../futures/card/cardSlice';
+import { openModal } from '../futures/modal/modalSlice';
+
 
 const CardContainer = () => {
     const dispatch = useDispatch();
@@ -33,7 +35,7 @@ const CardContainer = () => {
           <h4>
             Total: <span>{total.toFixed(2)}</span>
           </h4>
-          <button className="clear-btn" onClick={()=>dispatch(clearCard())}>
+          <button className="clear-btn" onClick={()=>dispatch(openModal())}>
             Clear Card
           </button>
         </div>
