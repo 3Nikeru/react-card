@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CardItem from './CardItem'
-import { clearCard, removeItem } from '../futures/card/cardSlice';
 import { openModal } from '../futures/modal/modalSlice';
 
 
