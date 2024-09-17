@@ -1,12 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit'
-import cardItems from '../../cardItems';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+// import cardItems from '../../cardItems';
+import axios from 'axios';
+
+const url = 'https://raw.githubusercontent.com/3Nikeru/react-card/main/data/react-card.json';
 
 const initialState = {
-    cardItems: cardItems,
+    cardItems: [],
     amount: 0,
     total: 0,
     isLoading: true
 }
+
+export const getCardItems = createAsyncThunk("card/getCardItems", async(_, thunkAPI) => {
+    try {
+        const response = await axios(url);
+        // console.log(response.data)
+        // console.log(thunkAPI.getState());
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue('Something went wrong :(')
+    }
+})
 const cardSlice = createSlice({
     name: "card",
     initialState,
@@ -36,6 +50,20 @@ const cardSlice = createSlice({
             });
             state.amount = amount;
             state.total = total;
+        },
+        extraReducers: (builder) => {
+            builder.addCase(getCardItems.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(getCardItems.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.cardItems = action.payload
+                console.log(cardItems);
+                
+            })
+            .addCase(getCardItems.rejected, (state) => {
+                state.isLoading = false
+            })
         }
     }
 })
