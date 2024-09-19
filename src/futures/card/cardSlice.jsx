@@ -51,20 +51,19 @@ const cardSlice = createSlice({
             state.amount = amount;
             state.total = total;
         },
-        extraReducers: (builder) => {
-            builder.addCase(getCardItems.pending, (state) => {
-                state.isLoading = true
-            })
-            .addCase(getCardItems.fulfilled, (state, action) => {
-                state.isLoading = false
-                state.cardItems = action.payload
-                console.log(cardItems);
-                
-            })
-            .addCase(getCardItems.rejected, (state) => {
-                state.isLoading = false
-            })
-        }
+    },
+    extraReducers: (builder) => {
+        builder.addCase(getCardItems.pending, (state) => {
+            state.isLoading = true
+        })
+        .addCase(getCardItems.fulfilled, (state, action) => {
+            state.isLoading = false
+            state.cardItems = action.payload
+            
+        })
+        .addCase(getCardItems.rejected, (state) => {
+            state.isLoading = false
+        })
     }
 })
 // console.log(cardSlice.actions);
